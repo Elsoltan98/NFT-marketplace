@@ -1,7 +1,8 @@
 import {View, StyleSheet, Image} from 'react-native';
 import React, {FC} from 'react';
-import {COLORS, SIZES, SHADOWS} from '../../constants';
+import {COLORS, SIZES, SHADOWS, assets} from '../../constants';
 import {NFTItem} from '../../models';
+import CircleBtn from '../CircleBtn';
 
 interface Props {
   data: NFTItem;
@@ -12,6 +13,12 @@ const NFTCard: FC<Props> = ({data}) => {
     <View style={styles.container}>
       <View style={styles.cardContainer}>
         <Image resizeMode="cover" source={data.image} style={styles.image} />
+        <CircleBtn
+          imageUrl={assets.heart}
+          onPress={() => {}}
+          right={10}
+          top={10}
+        />
       </View>
     </View>
   );
