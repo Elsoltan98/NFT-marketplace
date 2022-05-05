@@ -1,8 +1,13 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
-import React from 'react';
+import {View, StyleSheet, Image} from 'react-native';
+import React, {FC} from 'react';
 import {COLORS, SIZES, SHADOWS} from '../../constants';
+import {NFTItem} from '../../models';
 
-const NFTCard = ({data}) => {
+interface Props {
+  data: NFTItem;
+}
+
+const NFTCard: FC<Props> = ({data}) => {
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
