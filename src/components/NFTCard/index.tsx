@@ -3,6 +3,7 @@ import React, {FC} from 'react';
 import {COLORS, SIZES, SHADOWS, assets} from '../../constants';
 import {NFTItem} from '../../models';
 import CircleBtn from '../CircleBtn';
+import {EthPrice, NftTitle, RectBtn, SubInfo} from '../SubInfo';
 
 interface Props {
   data: NFTItem;
@@ -19,6 +20,26 @@ const NFTCard: FC<Props> = ({data}) => {
           right={10}
           top={10}
         />
+      </View>
+      <SubInfo />
+      <View style={{width: '100%', padding: SIZES.font}}>
+        <NftTitle
+          title={data.name}
+          subtitle={data.creator}
+          titleSize={SIZES.large}
+          subTitleSize={SIZES.small}
+        />
+
+        <View
+          style={{
+            marginTop: SIZES.font,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <EthPrice price={data.price} />
+          <RectBtn />
+        </View>
       </View>
     </View>
   );

@@ -14,9 +14,11 @@ interface Props {
   right?: number;
 }
 
-const CircleBtn: FC<Props> = ({onPress, imageUrl}, props: any) => {
+const CircleBtn: FC<Props> = ({onPress, imageUrl, top, right}) => {
   return (
-    <TouchableOpacity style={{...styles.container, ...props}} onPress={onPress}>
+    <TouchableOpacity
+      style={{...styles.container, top: top, right: right}}
+      onPress={onPress}>
       <Image source={imageUrl} style={styles.img} resizeMode="contain" />
     </TouchableOpacity>
   );
